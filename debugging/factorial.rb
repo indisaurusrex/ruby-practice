@@ -1,13 +1,16 @@
 def factorial(n)
-  product = 1
-  while n > 0
+  product = n #changed to n, because factorial is times itself
+  p "at the start product is #{product}"
+  while n > 1 #changed to 1, so that final stage != 0
     n -= 1
+    p "we multiply #{product} by #{n}"
     product *= n
+    p "we get #{product}"
   end
   product
 end
 
 # Intended output:
 #
-# > factorial(5)
+print factorial(5)
 # => 120
