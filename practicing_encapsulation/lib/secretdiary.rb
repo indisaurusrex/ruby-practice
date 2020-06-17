@@ -1,3 +1,5 @@
+require_relative 'locked_error'
+
 class SecretDiary
 
   def initialize
@@ -6,7 +8,8 @@ class SecretDiary
   end
 
   def add_entry
-    raise #put error in here and do rspec first
+    raise LockedError, "it's locked" if @lock
+
     puts "What is your entry?"
     @entries << gets.chomp
   end
@@ -14,9 +17,8 @@ class SecretDiary
   def get_entries
   end
 
-
-
   def lock
+
   end
 
   def unlock

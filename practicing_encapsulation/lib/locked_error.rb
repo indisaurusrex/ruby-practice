@@ -1,0 +1,2 @@
+class LockedError < StandardError
+end

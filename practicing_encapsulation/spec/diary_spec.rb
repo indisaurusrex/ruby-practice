@@ -15,7 +15,7 @@ describe SecretDiary do
     end
 
     it 'throws an error if locked' do
-      expect { subject.add_entry }.to throw :locked
+      expect { subject.add_entry }.to raise_error(LockedError, "it's locked")
     end
   end
 
